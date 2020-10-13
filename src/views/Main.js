@@ -13,12 +13,11 @@ const Main = () => {
         <Container>
             <AddUser/>
             <div className="users-cards-wrapper">
-                {users.map((user, index) => (
-                    <UserCard key={index}
+                {users.map(user => (
+                    <UserCard key={user.id}
                       name={user.name}
                       email={user.email}
                       phone={user.phone}
-                      website={user.website}
                       desc={user.description}
                       event={() => history.push(`/user/${user.id}`)}
                     />

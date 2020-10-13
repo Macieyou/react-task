@@ -4,6 +4,7 @@ import {UsersProvider} from "./contexts/UsersContext";
 import Main from './views/Main';
 import Posts from './views/Posts';
 import SinglePost from "./views/SinglePost";
+import {PostsProvider} from "./contexts/PostsContext";
 
 
 const MainRouter = () => {
@@ -11,8 +12,10 @@ const MainRouter = () => {
     return (
         <UsersProvider>
           <Route exact path="/" component={Main}/>
-          <Route exact path='/user/:userId' component={Posts}/>
-          <Route exact path='/user/:userId/post/:postId' component={SinglePost}/>
+          <PostsProvider>
+              <Route exact path='/user/:userId' component={Posts}/>
+              <Route exact path='/user/:userId/post/:postId' component={SinglePost}/>
+          </PostsProvider>
         </UsersProvider>
     )
 }

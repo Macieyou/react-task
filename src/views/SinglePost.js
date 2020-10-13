@@ -1,23 +1,19 @@
 import React, {useContext} from 'react';
-import {useHistory} from "react-router-dom";
-import {UsersContext} from "../contexts/UsersContext";
+import {PostsContext} from "../contexts/PostsContext";
 import Container from "../components/Container";
 import PostCard from '../components/PostCard';
 
 const SinglePost = ({match, ...props}) => {
-    const [users] = useContext(UsersContext);
-    const history = useHistory();
+    const [posts] = useContext(PostsContext);
 
     return (
         <Container>
-            {users.filter(user => `${user.id}` === match.params.userId).map(user => (
+            {posts.filter(post => `${post.userId}` === match.params.userId && `${post.postId}` === match.params.postId).map(post => (
                 <section className="posts-cards-wrapper">
-                    {user.posts.filter(post => `${post.id}` === match.params.postId).map(post => (
-                        <PostCard className="post-card--full"
-                            title={post.title}
-                            desc={post.desc}
-                        />
-                    ))}
+                    <PostCard className="post-card--full"
+                        title={post.title}
+                        desc={post.desc}
+                    />
                 </section>
             ))}
         </Container>

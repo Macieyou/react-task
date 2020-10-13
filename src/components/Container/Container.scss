@@ -4,6 +4,7 @@
   padding: 0 15px;
   margin: 0 auto;
   box-sizing: content-box;
+  min-height: calc(100vh - 60px - 60px);
 
   @include smMin() {
     max-width: 540px;
@@ -20,4 +21,10 @@
   @include xlMin() {
     max-width: 1140px;
   }
+
+  &--header,
+  &--footer, {
+    min-height: auto;
+  }
+
 }

@@ -5,7 +5,6 @@ const AddUser = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [website, setWebsite] = useState('');
     const [desc, setDesc] = useState('');
     const [users, setUsers] = useContext(UsersContext);
 
@@ -21,10 +20,6 @@ const AddUser = () => {
         setPhone(e.target.value);
     }
 
-    const updateWebsite = (e) => {
-        setWebsite(e.target.value);
-    }
-
     const updateDesc = (e) => {
         setDesc(e.target.value);
     }
@@ -35,8 +30,8 @@ const AddUser = () => {
             name: name,
             email: email,
             phone: phone,
-            website: website,
-            desc: desc
+            desc: desc,
+            id: users.length + 1
         }])
     }
 
@@ -45,7 +40,6 @@ const AddUser = () => {
             <input type="text" name="name" value={name} onChange={updateName}/>
             <input type="text" name="email" value={email} onChange={updateEmail}/>
             <input type="text" name="phone" value={phone} onChange={updatePhone}/>
-            <input type="text" name="website" value={website} onChange={updateWebsite}/>
             <input type="text" name="desc" value={desc} onChange={updateDesc}/>
             <button>Submit</button>
         </form>
