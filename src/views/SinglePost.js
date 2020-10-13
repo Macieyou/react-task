@@ -5,10 +5,12 @@ import PostCard from '../components/PostCard';
 
 const SinglePost = ({match, ...props}) => {
     const [posts] = useContext(PostsContext);
+    const userHolder = match.params.userId;
+    const postHolder = match.params.postId;
 
     return (
         <Container>
-            {posts.filter(post => `${post.userId}` === match.params.userId && `${post.postId}` === match.params.postId).map(post => (
+            {posts.filter(post => `${post.userId}` ===  userHolder && `${post.postId}` === postHolder).map(post => (
                 <section className="posts-cards-wrapper">
                     <PostCard className="post-card--full"
                         title={post.title}
