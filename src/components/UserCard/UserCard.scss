@@ -1,0 +1,28 @@
+@import "src/styles/common/colors";
+
+.users-cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.user-card {
+  flex-basis: 25%;
+  background-color: $user-card-color;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid $border-color;
+
+  &__name {
+
+  }
+
+  &__info {
+
+  }
+
+  &__desc {
+
+  }
+}

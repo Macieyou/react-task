@@ -1,0 +1,128 @@
+//*** SCREEN SIZES ***//
+
+// 320 - 479 px
+$screen-xs-max: 479px;
+
+// 480 - 767 px
+$screen-sm-min: 480px;
+$screen-sm-max: 767px;
+
+// 768 - 991 px
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+
+// 992 - 1199px
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+
+// 1200 - inf px
+$screen-xl-min: 1200px;
+
+$screen-xxl-min: 2200px;
+
+// Screen media breakpoints
+$screen-xs: "screen and (min-width: 0) and (max-width: #{$screen-xs-max})";
+$screen-sm: "screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})";
+$screen-md: "screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})";
+$screen-lg: "screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max})";
+$screen-xl: "screen and (min-width: #{$screen-xl-min})";
+
+@mixin respondFromTo ($size_from, $size_to){
+  @media screen and (min-width: $size_from) and (max-width: $size_to){
+    @content;
+  }
+}
+
+@mixin xsMax {
+  @media screen and (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin smMin {
+  @media screen and (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin smMax {
+  @media screen and (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+@mixin mdMin {
+  @media screen and (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin mdMax {
+  @media screen and (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+@mixin lgMin {
+  @media screen and (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin lgMax {
+  @media screen and (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin xlMin {
+  @media screen and (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xxlMin {
+  @media screen and (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
+@mixin xsOnly {
+  @include respondFromTo(0,$screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin smOnly {
+  @include respondFromTo($screen-sm-min,$screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin mdOnly {
+  @include respondFromTo($screen-md-min,$screen-md-max) {
+    @content;
+  }
+}
+
+@mixin lgOnly {
+  @include respondFromTo($screen-lg-min,$screen-lg-max) {
+    @content;
+  }
+}
+
+@mixin xlOnly {
+  @media #{ $screen-lg } {
+    @content;
+  }
+}
+
+// Retina media query
+@mixin retinaDisplay {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    @content
+  }
+}

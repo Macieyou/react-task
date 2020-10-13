@@ -1,0 +1,43 @@
+@import "src/styles/common/colors";
+
+.posts-cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.post-card {
+  $self: &;
+  background-color: $user-card-color;
+
+  &--short {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid $border-color;
+    padding: 15px 20px;
+    margin: 10px;
+
+    #{$self}__cta {
+      margin-left: auto;
+    }
+  }
+
+  &--full {
+
+  }
+
+
+  &__title {
+
+  }
+
+  &__desc {
+
+  }
+
+  &__cta {
+
+  }
+}

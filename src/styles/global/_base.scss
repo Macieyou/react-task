@@ -1,0 +1,64 @@
+@import "src/styles/common/media";
+@import "src/styles/common/colors";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900,900i&display=swap');
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: $bg-color;
+  color: $text-color;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  color: #675de0;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #675de0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  background-color: transparent;
+  &:focus, &:active {
+    outline: none;
+  }
+}

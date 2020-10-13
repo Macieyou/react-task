@@ -1,0 +1,64 @@
+@import "src/styles/common/colors";
+
+.arrow-btn {
+  $self: &;
+  $delay: 0.15s;
+  $btn-size: 50px;
+  $btn-border-width: 3px;
+  $arrow-size: $btn-size / 3;
+  $arrow-hover : $arrow-size / 1.4;
+
+  position: relative;
+  display: block;
+  width: $btn-size;
+  height: $btn-size;
+  border-radius: 50%;
+  border: $btn-border-width solid $primary;
+  box-sizing: border-box;
+  transition: all .5s ease;
+
+  &::before, &::after {
+    content:"";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    transition: all $delay ease-in-out;
+  }
+
+  &::before {
+    width: 0;
+    height: $btn-border-width;
+    left: -50%;
+    top: 50%;
+    background: $primary;
+    transform: translate(0, -50%);
+  }
+
+  &::after {
+    width: $arrow-size;
+    height: $arrow-size;
+    left: 42%;
+    top: 50%;
+    border: $btn-border-width solid $primary;
+    border-left: 0;
+    border-bottom: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-color:transparent;
+    transition: all $delay ease;
+
+    &::before {
+      left: $btn-border-width;
+      width: 100%;
+      opacity: 1;
+    }
+
+    &::after {
+      left: calc(#{$btn-size} - #{$arrow-hover});
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}

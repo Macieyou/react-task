@@ -1,0 +1,24 @@
+@import "../../styles/common/media";
+@import "../../styles/common/colors";
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  background-color: #000;
+  margin-bottom: 30px;
+  padding-bottom: 2px;
+
+  &__nav-wrapper {
+    display: flex;
+  }
+
+  &__hamburger {
+    display: block;
+    position: relative;
+    z-index: 3;
+    @include lgMin {
+      display: none;
+    }
+  }
+}

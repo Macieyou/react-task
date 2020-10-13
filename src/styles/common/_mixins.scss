@@ -1,0 +1,9 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin bg-grandient {
+  background-image: linear-gradient(to right, #c67cf2, #b173ee, #9b6be9, #8364e5, #675de0);
+}

@@ -1,0 +1,23 @@
+@import "src/styles/common/media";
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: content-box;
+
+  @include smMin() {
+    max-width: 540px;
+  }
+
+  @include mdMin() {
+    max-width: 720px;
+  }
+
+  @include lgMin() {
+    max-width: 960px;
+  }
+
+  @include xlMin() {
+    max-width: 1140px;
+  }
+}
