@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import {UsersProvider} from "./contexts/UsersContext";
-import Main from './views/Main';
+import Users from './views/Users';
 import Posts from './views/Posts';
 import SinglePost from "./views/SinglePost";
 import {PostsProvider} from "./contexts/PostsContext";
@@ -12,7 +12,7 @@ const MainRouter = () => {
 
     return (
         <UsersProvider>
-          <Route exact path="/" component={Main}/>
+          <Route exact path="/" component={Users}/>
           <PostsProvider>
               <Route exact path='/user/:userId' component={Posts}/>
               <CommentsProvider>

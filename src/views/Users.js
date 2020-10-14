@@ -4,7 +4,7 @@ import {UsersContext} from "../contexts/UsersContext";
 import Container from "../components/Container";
 import UserCard from '../components/UserCard';
 
-const Main = () => {
+const Users = () => {
   const [users] = useContext(UsersContext);
   const history = useHistory();
 
@@ -25,4 +25,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Users;

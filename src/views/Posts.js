@@ -8,6 +8,7 @@ import PostCard from '../components/PostCard';
 import AddPost from "../components/AddPost";
 import BackButton from "../components/BackButton";
 import Modal from "../components/Modal";
+import RemovePost from "../components/RemovePost";
 
 const Posts = ({match, ...props}) => {
     const [users] = useContext(UsersContext);
@@ -19,7 +20,7 @@ const Posts = ({match, ...props}) => {
         <Container>
             <NavBar>
                 <BackButton/>
-                <Modal>
+                <Modal title="Add post">
                     <AddPost/>
                 </Modal>
             </NavBar>
@@ -31,7 +32,9 @@ const Posts = ({match, ...props}) => {
                           className="post-card--short"
                           title={`${post.title.substring(0, 80)}...`}
                           event={() => history.push(`/user/${user.id}/post/${post.postId}`)}
-                        />
+                        >
+                            <RemovePost/>
+                        </PostCard>
                     ))}
                 </section>
             ))}

@@ -1,0 +1,68 @@
+@import "src/styles/common/colors";
+
+.input {
+  $self: &;
+  width: 100%;
+  position: relative;
+  margin: 0 0 15px;
+  padding: 0;
+  border: 0;
+
+  &__field {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    border: 0;
+    outline: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid $text-light-color;
+    padding: 30px 0 5px;
+    background: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ #{$self}__label {
+      font-size: 1rem;
+      cursor: text;
+      top: 30px;
+    }
+
+    &:focus {
+      & ~ #{$self}__label {
+        display: block;
+        position: absolute;
+        top: 5px;
+        font-size: .9rem;
+        font-weight: 500;
+        color: $primary;
+      }
+
+      & ~ #{$self}__bar {
+        width: 100%;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: 5px;
+    margin: 0;
+    color: $text-light-color;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  &__bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $primary;
+    transition: width 0.4s ease;
+  }
+}

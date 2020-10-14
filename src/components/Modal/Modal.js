@@ -18,11 +18,11 @@ class Modal extends Component {
   
   render() {
     const {modalOpen, modalClass, overlayClass} = this.state;
-    const {children} = this.props;
+    const {children, title} = this.props;
     
     return (
       <>
-        <AddButton onClick={() => this.handleModalClick()}/>
+        <AddButton title={title} onClick={() => this.handleModalClick()}/>
         <div className={`${modalOpen ? `${overlayClass} ${overlayClass}--active` : `${overlayClass}`}`}/>
         <div className={`${modalOpen ? `${modalClass} ${modalClass}--active` : `${modalClass}`}`}>
           <input type="image" src={modalClose} alt="close-icon" onClick={() => this.handleModalClick()} className="modal__close"/>

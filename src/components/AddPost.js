@@ -1,6 +1,8 @@
 import React, {useState, useContext} from 'react';
 import { useParams } from 'react-router-dom'
 import {PostsContext} from "../contexts/PostsContext";
+import Input from "./Input";
+import AddButton from "./AddButton";
 
 const AddPost= () => {
     const [title, setTitle] = useState('');
@@ -32,9 +34,23 @@ const AddPost= () => {
 
     return (
         <form onSubmit={addPost}>
-            <input type="text" name="name" value={title} required onChange={updateTitle}/>
-            <input type="text" name="desc" value={desc} required onChange={updateDesc}/>
-            <button>Submit</button>
+            <Input
+                label="Title"
+                required={true}
+                placeholder="Title"
+                name="name"
+                value={title}
+                onChange={updateTitle}
+            />
+            <Input
+                label="Contents"
+                required={true}
+                placeholder="Contents"
+                name="desc"
+                value={desc}
+                onChange={updateDesc}
+            />
+            <AddButton title="Submit"/>
         </form>
     );
 };

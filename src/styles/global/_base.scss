@@ -1,6 +1,7 @@
 @import "src/styles/common/media";
 @import "src/styles/common/colors";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900,900i&display=swap');
+
 *,
 ::after,
 ::before {
@@ -37,6 +38,9 @@ a {
     text-decoration: underline;
     color: $primary;
   }
+}
+form {
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

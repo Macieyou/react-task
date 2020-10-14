@@ -1,10 +1,11 @@
 import React, {useState, useContext} from 'react';
 import { useParams } from 'react-router-dom'
 import {CommentsContext} from "../contexts/CommentsContext";
+import Input from "./Input";
+import AddButton from "./AddButton";
 
 const AddComment= () => {
     const [author, setAuthor] = useState('');
-    const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [comments, setComments] = useContext(CommentsContext);
 
@@ -19,10 +20,6 @@ const AddComment= () => {
         setAuthor(e.target.value);
     }
 
-    const updateTitle = (e) => {
-        setTitle(e.target.value);
-    }
-
     const updateDesc = (e) => {
         setDesc(e.target.value);
     }
@@ -32,7 +29,6 @@ const AddComment= () => {
         console.log(commentsLength);
         setComments(prevComments => [...prevComments, {
             author: author,
-            title: title,
             desc: desc,
             userId: getCurrentUserId,
             postId: getCurrentPostId,
@@ -42,10 +38,23 @@ const AddComment= () => {
 
     return (
         <form onSubmit={addComment}>
-            <input type="text" name="name" value={author} onChange={updateAuthor}/>
-            <input type="text" name="title" value={title} onChange={updateTitle}/>
-            <input type="text" name="desc" value={desc} onChange={updateDesc}/>
-            <button>Submit</button>
+            <Input
+                label="Name"
+                required={true}
+                placeholder="Name"
+                name="name"
+                value={author}
+                onChange={updateAuthor}
+            />
+            <Input
+                label="Text"
+                required={true}
+                placeholder="Text"
+                name="desc"
+                value={desc}
+                onChange={updateDesc}
+            />
+            <AddButton title="Submit"/>
         </form>
     );
 };

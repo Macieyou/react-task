@@ -3,6 +3,7 @@ import {PostsContext} from "../contexts/PostsContext";
 import {CommentsContext} from "../contexts/CommentsContext";
 import Container from "../components/Container";
 import PostCard from '../components/PostCard';
+import CommentCard from "../components/CommentCard";
 import AddComment from "../components/AddComment";
 import NavBar from "../components/NavBar";
 import BackButton from "../components/BackButton";
@@ -18,24 +19,26 @@ const SinglePost = ({match, ...props}) => {
         <Container>
             <NavBar>
                 <BackButton/>
-                <Modal>
+                <Modal title="Add comment">
                     <AddComment/>
                 </Modal>
             </NavBar>
+
             {posts.filter(post => `${post.userId}` ===  userHolder && `${post.postId}` === postHolder).map(post => (
                 <section className="posts-cards-wrapper" key={post.postId}>
                     <PostCard
                         className="post-card--full"
                         title={post.title}
                         desc={post.desc}
-                    />
-                    {comments.filter(comment => `${comment.userId}` ===  userHolder && `${comment.postId}` === postHolder).map(comment => (
-                        <PostCard key={comment.commentId}
-                            className="post-card--full"
-                            title={comment.title}
-                            desc={comment.desc}
-                        />
-                    ))}
+                    >
+                        <span>Comments:</span>
+                        {comments.filter(comment => `${comment.userId}` ===  userHolder && `${comment.postId}` === postHolder).map(comment => (
+                            <CommentCard key={comment.commentId}
+                                 author={comment.author}
+                                 desc={comment.desc}
+                            />
+                        ))}
+                    </PostCard>
                 </section>
             ))}
         </Container>
