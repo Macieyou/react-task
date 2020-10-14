@@ -1,0 +1,64 @@
+@import "src/styles/common/media";
+@import "src/styles/common/colors";
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 20;
+
+  &--active {
+    display: block;
+  }
+
+}
+.modal {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  margin: 0 auto;
+  border: 1px solid $primary;
+  max-width: 510px;
+  min-height: 300px;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+
+  &--active {
+    display: block;
+  }
+
+  &__title {
+    background-color: $primary;
+    color: #fff;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 50px;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px;
+  }
+
+  &__container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

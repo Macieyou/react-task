@@ -32,8 +32,8 @@ const AddPost= () => {
 
     return (
         <form onSubmit={addPost}>
-            <input type="text" name="name" value={title} onChange={updateTitle}/>
-            <input type="text" name="name" value={desc} onChange={updateDesc}/>
+            <input type="text" name="name" value={title} required onChange={updateTitle}/>
+            <input type="text" name="desc" value={desc} required onChange={updateDesc}/>
             <button>Submit</button>
         </form>
     );

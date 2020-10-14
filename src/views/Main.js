@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {UsersContext} from "../contexts/UsersContext";
-import AddUser from "../components/AddUser";
 import Container from "../components/Container";
 import UserCard from '../components/UserCard';
 
@@ -11,7 +10,6 @@ const Main = () => {
 
     return (
         <Container>
-            <AddUser/>
             <div className="users-cards-wrapper">
                 {users.map(user => (
                     <UserCard key={user.id}

@@ -15,8 +15,15 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    border: 3px solid $primary;
     padding: 15px 20px;
     margin-bottom: 20px;
+    border-radius: 5px;
+
+    #{$self}__title {
+      color: $primary;
+      font-weight: 600;
+    }
 
     #{$self}__cta {
       margin-left: auto;
