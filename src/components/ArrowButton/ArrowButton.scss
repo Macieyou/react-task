@@ -1,6 +1,6 @@
 @import "src/styles/common/colors";
 
-.arrow-btn {
+.arrow-button {
   $self: &;
   $delay: 0.15s;
   $btn-size: 50px;
@@ -60,5 +60,9 @@
       left: calc(#{$btn-size} - #{$arrow-hover});
       transform: translate(-50%, -50%) rotate(45deg);
     }
+  }
+
+  &--back {
+    transform: rotateY(180deg);
   }
 }

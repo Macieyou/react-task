@@ -4,6 +4,9 @@ import {CommentsContext} from "../contexts/CommentsContext";
 import Container from "../components/Container";
 import PostCard from '../components/PostCard';
 import AddComment from "../components/AddComment";
+import NavBar from "../components/NavBar";
+import BackButton from "../components/BackButton";
+import Modal from "../components/Modal";
 
 const SinglePost = ({match, ...props}) => {
     const [posts] = useContext(PostsContext);
@@ -13,7 +16,12 @@ const SinglePost = ({match, ...props}) => {
 
     return (
         <Container>
-            <AddComment/>
+            <NavBar>
+                <BackButton/>
+                <Modal>
+                    <AddComment/>
+                </Modal>
+            </NavBar>
             {posts.filter(post => `${post.userId}` ===  userHolder && `${post.postId}` === postHolder).map(post => (
                 <section className="posts-cards-wrapper" key={post.postId}>
                     <PostCard
