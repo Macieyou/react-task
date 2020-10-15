@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
 import { useParams } from 'react-router-dom'
 import {PostsContext} from "../contexts/PostsContext";
-import Input from "./Input";
-import AddButton from "./AddButton";
+import Input from "../components/Input";
+import AddButton from "../components/AddButton";
 
 const AddPost= () => {
     const [title, setTitle] = useState('');

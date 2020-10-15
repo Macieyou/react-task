@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {useParams} from "react-router-dom";
 import {PostsContext} from "../contexts/PostsContext";
-import RemoveButton from "./RemoveButton";
+import RemoveButton from "../components/RemoveButton";
 
 const RemovePost = () => {
     const [posts, setPosts] = useContext(PostsContext);

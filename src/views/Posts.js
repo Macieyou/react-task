@@ -5,10 +5,10 @@ import {PostsContext} from "../contexts/PostsContext";
 import Container from "../components/Container";
 import NavBar from "../components/NavBar";
 import PostCard from '../components/PostCard';
-import AddPost from "../components/AddPost";
+import AddPost from "../actions/AddPost";
+import RemovePost from "../actions/RemovePost";
 import BackButton from "../components/BackButton";
 import Modal from "../components/Modal";
-import RemovePost from "../components/RemovePost";
 
 const Posts = ({match, ...props}) => {
     const [users] = useContext(UsersContext);

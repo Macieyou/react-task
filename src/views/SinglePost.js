@@ -4,7 +4,7 @@ import {CommentsContext} from "../contexts/CommentsContext";
 import Container from "../components/Container";
 import PostCard from '../components/PostCard';
 import CommentCard from "../components/CommentCard";
-import AddComment from "../components/AddComment";
+import AddComment from "../actions/AddComment";
 import NavBar from "../components/NavBar";
 import BackButton from "../components/BackButton";
 import Modal from "../components/Modal";
