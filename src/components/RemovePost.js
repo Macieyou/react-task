@@ -11,10 +11,10 @@ const RemovePost = () => {
     const postsLength = posts.filter(post => `${post.userId}` ===  getCurrentUserId);
 
     const removePosts = (index) => {
-        const kapa = posts.splice(index, 1)
+        const remove = posts.splice(index, 1)
         console.log(postsLength.length);
         setPosts(prevPosts => [...prevPosts, {
-            posts: kapa
+            posts: remove
         }])
     }
 
